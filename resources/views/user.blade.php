@@ -13,14 +13,12 @@
         <header>
             <span class="avatar"><img src="{{url('images/users/'.$user->id)}}.jpg" alt="" /></span>
             <h1><?=$user->name?></h1>
-            <p>
-                @if($user->comments)
-                    @foreach($user->comments as $comment)
-                        {{nl2br($comment->comment)}}
-                    @endforeach
-                    
-                @endif
-            </p>
+            @if($user->comments)
+                @foreach($user->comments as $comment)
+                    <p>{{nl2br($comment->comment)}}</p>
+                @endforeach
+                
+            @endif
         </header>
     </section>
     <footer id="footer">
