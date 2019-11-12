@@ -41,7 +41,10 @@ class postUserComment extends Command
     public function handle()
     {
         $user_id = $this->argument('user_id');
-        $comment = $this->argument('comment');
+        $comment = trim($this->argument('comment'));
+
+        if (!$comment)
+            return $this->error('Comment cannot be null.');
 
         //check if user exist
         $user = User::find($user_id);

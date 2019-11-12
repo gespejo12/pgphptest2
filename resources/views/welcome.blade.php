@@ -85,7 +85,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{route('user.index')}}">Go To Users</a>
+                    <a href="{{route('show.user', 1)}}">Go To John Smith</a>
+                    <a href="{{route('show.user', 2)}}">Go To John Doe</a>
                 </div>
             </div>
         </div>

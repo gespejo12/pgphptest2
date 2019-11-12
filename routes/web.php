@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('user', 'UserController');
+Route::get('user/{id}', 'UserController@show')->name('show.user');
+Route::post('user/{id}', 'UserController@store');
