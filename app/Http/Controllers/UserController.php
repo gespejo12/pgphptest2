@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class UserController extends Controller
 {
@@ -14,7 +15,8 @@ class UserController extends Controller
 
     }
 
-    public function show(Request $request, $id) {
-    	dd($id);
+    public function show($id) {
+    	$user = User::find($id);
+    	return $user ? view('user', compact('user')) : abort(404);
     }
 }
